@@ -1,0 +1,38 @@
+{% extends 'template.html' %}
+{% block content %}
+    <div class="catalog_categories">
+                        <div class="row">
+                            {% for category in categories %}
+                                {% if category.prodCount > 0 %}
+
+                                <div class="col-custom-6 col-sm-4 col-lg-3">
+                                <div class="top_category">
+                                    <div class="top_category-name">
+                                        <a href="/catalog/{{ category.url }}">{{ category.h1 }}</a>
+                                    </div>
+
+                                    <div class="shadow-box">
+                                        <a href="" class="top_category-thumb">
+                                            <img src="https://dummyimage.com/195x110/249ae5/ffffff.png" alt="">
+                                        </a>
+
+                                        <div class="top_category-list">
+                                            <ul>
+                                                {% for podcategory in category.subcats %}
+                                                <li><a href="/catalog/{{ podcategory.url }}">{{ podcategory.name }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                                {% endif %}
+                            {% endfor %}
+
+
+
+                        </div>
+                    </div>
+
+{% endblock %}

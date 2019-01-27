@@ -1,0 +1,88 @@
+<header>
+        <div class="top-line__block">
+            <div class="container">
+                <div class="items-wrap">
+                    <div class="item">
+                        <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <span class="city-label hidden-xs">Ваш город:</span> <a href="javascript:geoChange(event);">Москва</a>
+                    </div>
+
+                    <div class="item">
+                        <div class="icon">
+                            <a href="tel:84952255015">
+                                <i class="fa fa-phone"></i>
+                            </a>
+                        </div>
+                        <span class="hidden-xss">8 (495) 225-50-15</span>
+                    </div>
+
+                    <div class="item hidden-xs">
+                        <div class="icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        по будням с 9:30 до 19:00
+                    </div>
+                </div>
+                
+                <a href="#callback-popup" class="callback_btn hidden-xs" data-fancybox>Заказать звонок</a>
+                
+                <div class="mobile-controls__block hidden-sm hidden-md hidden-lg">
+                    <div id="js-m-cart-holder" class="single-btn"></div>
+                    <div id="js-m-user-holder" class="single-btn _user_btn"></div>
+                    <span class="nav-toggle"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-nav-holder"></div>
+        
+        <div class="header__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-custom-12 col-xs-6 col-md-3">
+                        <a href="/" class="logo">
+                            <img src="/static/assets/images/logo.svg" alt="">
+                            <span>Магазин товаров для дома</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-custom-12 col-xs-6 col-md-4 col-md-push-5 hidden-xs">
+                        <ul class="links-list">
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Где забрать</span>
+                                </a>
+                            </li>
+
+                            <li id="js-user-holder">
+                                <a href="">
+                                    <i class="fa fa-user"></i>
+                                    <span>Кабинет</span>
+                                </a>
+                            </li>
+
+                            <li id="js-cart-holder">
+                                <a href="">
+                                    <i class="fa fa-shopping-basket"></i>
+                                    <span>Корзина</span>
+                                    <span class="cart-counter">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-custom-12 col-xs-6 col-sm-12 col-md-5 col-md-pull-4">
+                        <div class="search">
+                            <form method="get"> {% csrf_token %}
+                                <input type="text" name="searchTextT" placeholder="Поиск по магазину">
+                                <span class="submit" onclick="SearchSubmit('top');"></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

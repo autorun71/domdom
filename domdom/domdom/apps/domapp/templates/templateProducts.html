@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+{% load staticfiles %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{{ page.description }}{% endblock %}">
+    <title>{% block title %}{{ page.title }}{% endblock %}</title>
+
+    <link href="{% static 'assets/plugins/jquery-ui/jquery-ui.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/style.css' %}" rel="stylesheet" type="text/css">
+
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
+    <script src="{% static 'assets/plugins/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/slick/slick.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/core.js' %}"></script>
+
+
+</head>
+<body>
+{% include 'header.html' %}
+
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="side-nav">
+                    <ul class="catalog-nav">
+                        <li>
+                            <a href="/catalog/" class="top-nav__catalog-link">Все товары</a>
+                            {% block left  %}
+                                {% include 'base/leftMenu.html' %}
+                            {% endblock %}
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-md-9">
+                <nav class="hidden-xs">
+                    <div id="main-nav" class="main-nav">
+                        <ul>
+                            {% block links %}
+                            <li class="active"><a href="#">Оплата</a></li>
+                            <li><a href="#">Доставка</a></li>
+                            <li><a href="#">Новости</a></li>
+                            <li><a href="#">Статьи</a></li>
+                            <li><a href="#">Контакты</a></li>
+                            {% endblock %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-content">
+                    {% block breadcrumbs %}
+                    <div class="breadcrumbs">
+
+                        <a href="">Главная</a> {% block bbreadcrumbs %}/
+                        <span>Каталог</span>{% endblock %}
+
+                    </div>
+                {% endblock %}
+
+                    <div class="h1_holder">
+                        <h1>{{ page.h1 }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+{% block dop1 %}{% endblock %}
+{% block dop2 %}{% endblock %}
+{% include 'footer.html' %}
+
+</body>
+</html>

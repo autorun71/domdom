@@ -1,0 +1,269 @@
+{% extends 'templateProducts.html' %}
+{% block content %}
+<!-- Рабочая область страницы -->
+    <div class="single_product_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="top-info">
+                        <div class="rate-holder"><span class="rate"></span></div>
+                        <div class="art-number">Артикул: 33396RUN</div>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 col-md-4 col-lg-5">
+                    <div class="product_images clearfix">
+                        <div class="main">
+                            <a href="https://dummyimage.com/1280x720/249ae5/ffffff.png" data-fancybox="group">
+                                <img src="https://dummyimage.com/310x310/249ae5/ffffff.png" alt="">
+                            </a>
+                        </div>
+
+                        <div class="thumbs">
+                            <a href="https://dummyimage.com/1280x720/249ae5/ffffff.png" data-fancybox="group">
+                                <img src="https://dummyimage.com/70x70/249ae5/ffffff.png" alt="">
+                            </a>
+
+                            <a href="https://dummyimage.com/1280x720/249ae5/ffffff.png" data-fancybox="group">
+                                <img src="https://dummyimage.com/70x70/249ae5/ffffff.png" alt="">
+                            </a>
+
+                            <a href="https://dummyimage.com/1280x720/249ae5/ffffff.png" data-fancybox="group">
+                                <img src="https://dummyimage.com/70x70/249ae5/ffffff.png" alt="">
+                            </a>
+
+                            <a href="https://dummyimage.com/1280x720/249ae5/ffffff.png" data-fancybox="group">
+                                <img src="https://dummyimage.com/70x70/249ae5/ffffff.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-5 col-md-4 col-lg-3 col-md-push-4 col-lg-push-4">
+                    <div class="product_controls">
+                        <div class="stock-holder">
+                            <span>Товар в наличии</span>
+                        </div>
+
+                        <div class="price-holder">
+                            <span class="price">599 руб.</span>
+                            <span class="price-old">799 руб.</span>
+
+                            <div class="opt-prices">
+                                <span>от 10 шт. – <strong>1 444 р.</strong> (-5%)</span>
+                                <span>от 25 шт. – <strong>1 368 р.</strong> (-10%)</span>
+                            </div>
+                        </div>
+
+                        <div class="buy_wrap">
+                            <label>
+                                <input type="text" name="" value="1">
+                            </label>
+                            <a href="#" class="buy-btn">Купить</a>
+                        </div>
+
+                        <div class="delivery-holder">
+                            <span class="h">Доставка</span>
+
+                            <table>
+                                <tr>
+                                    <td>Самовывоз
+                                        <i>?<span>в&nbsp;будние&nbsp;дни&nbsp;с&nbsp;9:00&nbsp;до&nbsp;19:00<br> по предварительному заказу</span></i>
+                                    </td>
+                                    <td>от 100р.</td>
+                                </tr>
+                                <tr>
+                                    <td>В пределах МКАД
+                                        <i>? <span>до 19:00</span></i>
+                                    </td>
+                                    <td>от 0 р.</td>
+                                </tr>
+                                <tr>
+                                    <td>По МО</td>
+                                    <td>от 499 р.</td>
+                                </tr>
+                                <tr>
+                                    <td>ТК "КИТ", 1-2 дня</td>
+                                    <td>~300 р.</td>
+                                </tr>
+                            </table>
+
+                            <a href="" class="delivery-link">Подробнее о доставке</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 col-md-4 col-lg-4 col-md-pull-4 col-lg-pull-3">
+                    <div class="product_params">
+                        <div class="h">Характеристики</div>
+
+                        <table class="params_table">
+                            <tr>
+                                <td>Бренд</td>
+                                <td>Ника</td>
+                            </tr>
+                            <tr>
+                                <td>Материал</td>
+                                <td>ДСП</td>
+                            </tr>
+                            <tr>
+                                <td>Высота (см)</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>Страна-производитель</td>
+                                <td>Россия</td>
+                            </tr>
+                            <tr>
+                                <td>Длина гладильной поверхности, см</td>
+                                <td>106,5</td>
+                            </tr>
+                            <tr>
+                                <td>Материал основания</td>
+                                <td>ДСП</td>
+                            </tr>
+                            <tr>
+                                <td>Ширина гладильной поверхности, см</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>Срок службы (лет)</td>
+                                <td>10</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Еще одна характеристика</td>
+                                <td>значение</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Еще одна характеристика</td>
+                                <td>значение</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Еще одна характеристика</td>
+                                <td>значение</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Еще одна характеристика</td>
+                                <td>значение</td>
+                            </tr>
+                        </table>
+
+                        <span class="show_hidden_params">Все характеристики</span>
+                    </div>
+                </div>
+
+
+                {% if page.text %}
+                    <div class="col-sm-12">
+                        <div class="text-block product_description">
+                            <h2>Описание</h2>
+                            {{ page.text }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Преимущества -->
+    <div class="container">
+        <div class="row">
+            <div class="support-information__block clearfix">
+                <div class="support-information__block-bg">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="support-item">
+                                <div class="left-area">
+                                    <div class="icon">
+                                        <i class="fa fa-rub"></i>
+                                    </div>
+                                </div>
+
+                                <div class="right-area">
+                                    <div class="heading">Гарантия возврата</div>
+                                    <div class="desc">если вам не понравился товар</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4">
+                            <div class="support-item">
+                                <div class="left-area">
+                                    <div class="icon">
+                                        <i class="fa fa-truck"></i>
+                                    </div>
+                                </div>
+
+                                <div class="right-area">
+                                    <div class="heading">Бесплатная доставка</div>
+                                    <div class="desc">в пределах МКАД при заказе от 1 500 руб.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-4">
+                            <div class="support-item">
+                                <div class="left-area">
+                                    <div class="icon">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </div>
+                                </div>
+
+                                <div class="right-area">
+                                    <div class="heading">Круглосуточное оформление</div>
+                                    <div class="desc">принимаем заказы на сайте 24/7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Преимущества -->
+
+    {% if other_prod %}
+    <!-- Другие товары категории -->
+    <div class="categories-list">
+        <div class="container">
+            <div class="categories-list__header">
+                <div class="categories-list__header__category_name">
+                    <div class="category_name-name"><a href="">Другие товары в наличии в разделе «Название раздела»</a></div>
+                </div>
+            </div>
+
+            <div class="categories-list__products extended">
+                <div class="row category-slider-runner">
+                    {% for ot_product in other_prod %}
+                        <div class="col-custom-6 col-sm-4 col-md-3">
+                            <div class="categories-list__product">
+                                <div class="categories-list__product-thumb">
+                                    <a href="/catalog/{{ ot_product.url }}"><img src="https://dummyimage.com/210x210/249ae5/ffffff.png" alt=""></a>
+                                </div>
+
+                                <div class="categories-list__product-rate"></div>
+                                <div class="categories-list__product-name">
+                                    <a href="/catalog/{{ ot_product.url }}">{{ ot_product.name }}</a>
+                                </div>
+                                <div class="categories-list__product-price">
+                                    <span class="categories-list__product-price -current">{{ ot_product.price }} руб.</span>
+                                    {% if ot_product.oldprice %}<span class="categories-list__product-price -old">{{ ot_product.oldprice }} руб.</span>{% endif %}
+                                </div>
+                                <div class="categories-list__product-btn">
+                                    <a href="/catalog/{{ ot_product.url }}" class="buy-btn">Купить</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Другие товары категории -->
+    {% endif %}
+    <!-- /Рабочая область страницы -->
+
+{% endblock %}

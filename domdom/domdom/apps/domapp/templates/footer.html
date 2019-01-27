@@ -1,0 +1,105 @@
+ <footer>
+        <div class="footer_navi">
+            <div class="container">
+                <div class="row">
+                    <div class="col-custom-6 col-sm-3">
+                        <ul>
+                            <li class="footer_navi-heading">Каталог</li>
+                            {% for cat in page.leftMenu %}
+                            <li><a href="/catalog/{{ cat.url }}">{{ cat.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="col-custom-6 col-sm-3">
+                        <ul>
+                            <li class="footer_navi-heading">Информация</li>
+                            <li><a href="">Оплата</a></li>
+                            <li><a href="">Доставка</a></li>
+                            <li><a href="">Новости</a></li>
+                            <li><a href="">Статьи</a></li>
+                            <li><a href="">Контакты</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-custom-12 col-sm-6">
+                        <div class="footer_navi-heading">Контактная информация</div>
+                        <div class="footer_navi-subtext">Интернет-магазин товаров для дома ДОМDOM</div>
+
+                        <ul class="footer_navi-contacts">
+                            <li><strong>Телефон:</strong> 8 (495) 225-50-15</li>
+                            <li><strong>Skype:</strong> www.domdom</li>
+                            <li><strong>Адрес пункта выдачи заказов:</strong> г. Москва, ст. метро «Тульская», ул. Самаринская, д.1</li>
+                        </ul>
+
+                        <div class="footer_navi-custom_links">
+                            <a href="">Карта сайта</a> |
+                            <a href="">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer_dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-custom-6">
+                        <p>Мы преданно служим нашим клиентам</p>
+                        <p>Copyright &copy; domdom.ru 2006-2018</p>
+                        <p>Интернет-магазин товаров для дома</p>
+                    </div>
+
+
+                    <div class="col-md-4 col-custom-6">
+                        <span class="developer">
+                            <a href="http://www.advertpro.ru/uslugi/prodvizhenie-internet-magazina/" target="_blank" rel="nofollow"><img src="/static/assets/images/developer_logo.svg" alt=""></a>
+                        </span>
+                        АдвертПро — продвижение интернет-магазина
+                    </div>
+
+
+                    <div class="col-md-2 col-custom-12">
+                        <div class="footer-counters">
+                            <!-- noindex -->
+                            <!--LiveInternet counter--><script type="text/javascript"><!--
+                            document.write("<a rel='nofollow' href='http://www.liveinternet.ru/click' "+
+                            "target=_blank><img src='http://counter.yadro.ru/hit?t44.1;r"+
+                            escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                            ";"+Math.random()+
+                            "' alt='' title='LiveInternet' "+
+                            "border='0' width='31' height='31'></a>")
+                            //--></script><!--/LiveInternet-->
+                            <!-- begin of Top100 code -->
+                            <script id="top100Counter" type="text/javascript" src="http://counter.rambler.ru/top100.jcn?2633443"></script>
+                            <noscript>
+                            <a href="http://top100.rambler.ru/navi/2633443/">
+                            <img src="http://counter.rambler.ru/top100.cnt?2633443" alt="Rambler's Top100" border="0" />
+                            </a>
+                            </noscript>
+                            <!-- end of Top100 code -->
+                            <!-- /noindex -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- noindex -->
+    <div id="callback-popup" class="popup-form__block tpl-ui">
+        <div class="headline">Заказать звонок</div>
+        <form method="post" action="">
+            <input type="text" name="phone" required placeholder="Контактный номер телефона">
+            <label class="privacy">
+                Отправляя форму, вы даете согласие на обработку своих персональных данных.
+                <input type="checkbox" name="privacy" required checked>
+            </label>
+            <input type="hidden" name="action" value="callback">
+            <input type="submit" name="send" value="Отправить" class="submit">
+        </form>
+    </div>
+    <!-- /noindex -->

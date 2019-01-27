@@ -1,0 +1,33 @@
+<ul class="nav-sections {{ leftMenuHidden }}">
+
+    {% for cats in page.leftMenu %}
+        <li{% if cats.child %} class="has-subnav"{% endif %}>
+            {% if cats.prod %}
+                <a href="/catalog/{{ cats.url }}">{{ cats.name }}</a>
+                <ul>
+
+                    {% for podcats1 in cats.child %}
+                        <li {% if podcats1.twochild %}class="has-subnav"{% endif %}>
+                            {% if podcats1.prod %}
+                                <a href="/catalog/{{ podcats1.url }}">{{ podcats1.name }}</a>
+
+                                {% if podcats1.twochild %}
+                                    {% for podcats2 in podcats1.twochild %}
+                                        <ul>
+
+                                            <li><a href="/catalog/{{ podcats2.url }}">{{ podcats2.name }}</a></li>
+                                        </ul>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+
+</ul>

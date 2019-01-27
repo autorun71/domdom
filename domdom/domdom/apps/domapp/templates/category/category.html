@@ -1,0 +1,64 @@
+{% extends 'template.html' %}
+{% block content %}
+<!-- Рабочая область страницы -->
+    <!-- Блок подкатегории -->
+    <div class="categories-list">
+        {% for podcat in razdel.podrazdel %}
+            {% if podcat.prod.all %}
+                <div class="categories-list__products">
+
+
+                    <div class="sub_categories_list-header">
+                        <div class="h">
+                            <a href="/catalog/{{ podcat.url }}">{{ podcat.name }}</a>
+                            <span title="Товаров в категории">{{ podcat.prod.all }}</span>
+                        </div>
+
+                        <ul>
+                            {% for podpodcats in podcat.cats %}
+                                {% if podpodcats.prodall %}
+                                    <li><a href="/catalog/{{ podpodcats.url }}">{{ podpodcats.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+
+                <div class="row category-slider-runner">
+
+                    {% for productcats in podcat.prod %}
+
+                        <div class="col-custom-6 col-sm-4 col-md-3">
+                            <div class="categories-list__product">
+                                <div class="categories-list__product-thumb">
+                                    <a href="/catalog/{{ productcats.url }}"><img src="https://dummyimage.com/210x210/249ae5/ffffff.png" alt=""></a>
+                                </div>
+
+                                <div class="categories-list__product-rate"></div>
+                                <div class="categories-list__product-name">
+                                    <a href="/catalog/{{ productcats.url }}">{{ productcats.name }}</a>
+                                </div>
+                                <div class="categories-list__product-price">
+                                    <span class="categories-list__product-price -current">{{ productcats.price }} руб.</span>
+                                {% if productcats.oldprice %}<span class="categories-list__product-price -old">{{ productcats.oldprice }} руб.</span>{% endif %}
+                                </div>
+                                <div class="categories-list__product-btn">
+                                    <a href="/catalog/{{ productcats.url }}" class="buy-btn">Купить</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+    <!-- /Блок подкатегории -->
+
+<!-- /Рабочая область страницы -->
+
+{% endblock %}

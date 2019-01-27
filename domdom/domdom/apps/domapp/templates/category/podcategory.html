@@ -1,0 +1,281 @@
+{% extends 'template.html' %}
+{% block left2 %}
+    <div id="filter_holder">
+        <div class="filter_holder-head hidden-md hidden-lg">
+            Подобрать товар
+            <span class="filter-close">&times;</span>
+        </div>
+
+        <div class="catalog_filter">
+            <!-- Параметр для фильтрации -->
+            <div class="filter_block">
+                <div class="filter_block-header active" data-state="1">
+                    Название параметра для фильтрации
+                </div>
+
+                <div class="filter_block-params">
+                    <div class="visible flex-row">
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                    </div>
+
+                    <div class="hidden">
+                        <div class="flex-row">
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden-opener" data-state="0">
+                        <span>Показать еще</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /Параметр для фильтрации -->
+
+
+            <!-- Параметр для фильтрации в одну строку -->
+            <div class="filter_block">
+                <div class="filter_block-header active" data-state="1">
+                    Параметр для фильтрации в одну строку
+                </div>
+
+                <div class="filter_block-params">
+                    <div class="visible"><!-- Чтобы сделать в одну строку надо убрать класс flex-row -->
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                        <div class="params-row">
+                            <label><input type="checkbox" name="" value=""> Параметр</label>
+                        </div>
+                    </div>
+
+                    <div class="hidden">
+                        <div class=""><!-- Чтобы сделать в одну строку надо убрать класс flex-row -->
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                            <div class="params-row">
+                                <label><input type="checkbox" name="" value=""> Параметр</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden-opener" data-state="0">
+                        <span>Показать еще</span>
+                    </div>
+                </div>
+            </div>
+            <!-- /Параметр для фильтрации в одну строку -->
+
+
+            <!-- Фильтр по цене -->
+            <div class="filter_block">
+                <div class="filter_block-header active" data-state="1">
+                    Цена
+                </div>
+
+                <div class="filter_block-params">
+                    <div class="params-row">
+                        <div class="filter_price">
+                            <span>от</span>
+                            <input type="text" name="filter_min_cost" value="75">
+                            <span>до</span>
+                            <input type="text" name="filter_max_cost" value="300">
+                            <span>руб.</span>
+                        </div>
+                    </div>
+
+                    <div class="params-row">
+                        <div id="filter_price_slider"></div>
+                        <script>
+                        $(function() {
+                            $('#filter_price_slider').slider({
+                                range: true,
+                                min: 1,
+                                max: 500,
+                                values: [75, 300],
+                                slide: function( event, ui ) {
+                                    $('input[name="filter_min_cost"]').val(ui.values[0]);
+                                    $('input[name="filter_max_cost"]').val(ui.values[1]);
+                                }
+                            });
+                        })
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- /Фильтр по цене -->
+
+            <button class="filter_run" onclick="filter_turn_on(true,jQuery(this)); return false;">Подобрать товары</button>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+<!-- Рабочая область страницы -->
+                    <div class="sub_categories_list-header">
+                        <ul>
+                            {% for podpodcats in razdel.podrazdel %}
+                                {% if podpodcats.prodall %}
+                                    <li><a href="/catalog/{{ podpodcats.url }}">{{ podpodcats.name }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+
+
+                    <!-- Кнопка показа фильтра на экранах до 992px -->
+                    <span class="filter-show hidden-md hidden-lg">Подобрать товар по параметрам</span>
+                    <!-- /Кнопка показа фильтра на экранах до 992px -->
+
+
+                    <div class="catalog_sorter">
+                        <span>Сортировать по:</span>
+                        <div class="catalog_sorter-types">
+                            <!-- order - класс активной сортировки, asc/desc - направление сортировки -->
+                            <a href="?order[name]=asc" class="order asc">Наименованию</a>
+                            <a href="">Цене</a>
+                        </div>
+
+                        <!-- Сортировка для мобильных до 600px. При изменении - переход по url из value -->
+                        <select class="catalog_sorter_mobile">
+                            <option value="">Наименованию (А-Я)</option>
+                            <option value="">Наименованию (Я-А)</option>
+                            <option value="">Возрастанию цены</option>
+                            <option value="">Убыванию цены</option>
+                        </select>
+                        <!-- /Сортировка для мобильных до 600px. При изменении - переход по url из value -->
+                    </div>
+
+
+
+                    <div class="catalog_products_list">
+                        {% for product in razdel.prod %}
+
+                                <!-- Товар в списке -->
+                        <div class="catalog_products_list-product">
+                            <div class="content">
+                                <div class="thumb">
+                                    <a href="/catalog/{{ product.url }}"><img src="https://dummyimage.com/270x270/249ae5/ffffff.png" alt=""></a>
+                                </div>
+
+                                <div class="description">
+                                    <div class="name-holder">
+                                        <a href="/catalog/{{ product.url }}">{{ product.name }}</a>
+                                    </div>
+
+                                    <div class="rate-holder">
+                                        <span class="rate"></span>
+                                    </div>
+
+                                    <div class="params-holder">
+                                        <!-- Вместо списка можно использовать <p> или просто текст -->
+                                        <ul>
+                                            <li>Артикул — 33392RUN</li>
+                                            <li>Бренд — Ника</li>
+                                            <li>Материал основания — ДСП</li>
+                                            <li>Размеры (ДхШхВ) (см) — 106,5x29x80</li>
+                                            <li>Страна-производитель — Россия</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="controls">
+                                <div class="custom-holder">
+                                    <div class="stock-holder">
+                                        <span>Товар в наличии</span>
+                                        <!-- <span class="nope">Нет в наличии</span> -->
+                                    </div>
+
+                                    <div class="price-holder">
+                                        <span class="price">{{ product.price }} <i>руб.</i></span>
+                                        {% if product.oldprice %}<span class="price-old">{{ product.oldprice }} <i>руб.</i></span>{% endif %}
+                                    </div>
+
+                                    <a href="/catalog/{{ product.url }}" class="buy-btn">Купить</a>
+                                </div>
+
+                                <div class="delivery-holder">
+                                    <div class="delivery-holder_row">
+                                        <span class="h">Доставка</span>
+                                        <span>30 марта, от 299 руб.</span>
+                                    </div>
+
+                                    <div class="delivery-holder_row">
+                                        <span class="h">Самовывоз</span>
+                                        <span>в будние, от 100 руб.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Товар в списке -->
+
+                        {% endfor %}
+
+
+                    </div>
+
+
+                    <div class="pagenavi">
+                       {% autoescape off %}{{ page.pagin }}{% endautoescape %}
+                    </div>
+
+
+                    <div class="text-block category_bottom_text">
+                         {{ text }}
+                    </div>
+                    <!-- /Рабочая область страницы -->
+
+{% endblock %}
