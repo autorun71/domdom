@@ -1,0 +1,17 @@
+.news1{
+
+    margin-top: 10px;
+}
+.news{
+    margin: 0 5px;
+    border:1px solid #f8f9fa;
+    border-radius: 4px;
+    height: 100%;
+    color: #afafaf;
+}
+.news:hover{
+    color: #333;
+    border:1px solid #e6e6e6;
+    cursor: pointer;
+
+}
